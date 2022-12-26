@@ -12,7 +12,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Expensify',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green).copyWith(secondary: Colors.green.shade800)
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+            .copyWith(secondary: Colors.blue.shade800),
+        fontFamily: 'Inter',
+        textTheme: ThemeData.light().textTheme.copyWith(
+          titleMedium: TextStyle(
+            fontFamily: 'Roboto',
+            fontSize: 18,
+            fontWeight: FontWeight.bold
+          ),
+          titleSmall: TextStyle(
+            fontFamily: 'Roboto',
+            fontSize: 12,
+            color: Colors.grey
+          ),
+        ),
+        appBarTheme: AppBarTheme(
+          titleTextStyle: TextStyle(
+              fontFamily: 'Inter', fontWeight: FontWeight.bold, fontSize: 25),
+        ),
       ),
       home: MyHomePage(),
     );
@@ -84,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Container(
               child: Card(
-                color: Colors.blue,
+                color: Theme.of(context).secondaryHeaderColor,
                 child: Text('Chart'),
                 elevation: 5,
               ),
